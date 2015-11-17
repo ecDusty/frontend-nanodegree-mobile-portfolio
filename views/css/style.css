@@ -1,6 +1,6 @@
-/** {
+* {
   outline: 1px solid red !important;
-}*/
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -13,7 +13,8 @@ body {
 }
 
 input {
-  background: grey;
+  background: white;
+  border: 0px;
   font-size: 18px;
 }
 
