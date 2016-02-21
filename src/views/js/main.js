@@ -544,9 +544,9 @@ window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
-  var cols = 8;
+  var cols = 4;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 4*cols; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza-sm.png";
