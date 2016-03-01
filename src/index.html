@@ -3,66 +3,302 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content=" Part Human, Part Web development Ninja. Though a writer in training.">
-    <meta name="author" content=" Erin Macalligan ">
-    <title>Erin Macalligan: Portfolio</title>
+    <meta name="description" content="Part Human, Part Web development Ninja. Though a writer in training.">
+    <meta name="author" content="Erin Macalligan">
+    <title>Dusty's Portfolio</title>
 
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
+<!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
 <!--    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">-->
-
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/print.css" rel="stylesheet">
-
-    <script async>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })
-      (window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-74101644-2', 'auto');
-      ga('send', 'pageview');
-    </script>
+<!--    <link href="css/style.css" rel="stylesheet">-->
+<!--    <link href="css/print.css" rel="stylesheet">-->
 <!--    <script async src="http://www.google-analytics.com/analytics.js"></script>-->
+    <style>
+      * {
+        box-sizing: border-box !impotant;
+        -moz-box-sizing: border-box !important;
+        -webkit-box-sizing: border-box !important;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      body {
+        background: #fff;
+        font-family: "Trebuchet MS", sans-serif;
+        font-size: 14px;
+      }
+
+      header, footer, .container {
+        width: 100%;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.5s ease-out;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+      }
+
+      ol, ul {
+        list-style: none;
+      }
+
+      header {
+        background-color: #FD5308;
+        min-height: 350px;
+      }
+
+      footer {
+        margin: 4% 0;
+      }
+      /*================
+      =                =
+      = WELCOME SCREEN =
+      =  Slide in/out  =
+      =                =
+      ================*/
+      #welcome, .wel-mes {
+        position: fixed;
+        width: 100%;
+        left: 0;
+      }
+
+      #welcome {
+        transition: top 2s ease-in 1s;
+        -webkit-transition: top 2s ease-in 1s;
+        -moz-transition: top 2s ease-in 1s;
+        -o-transition: top 2s ease-in 1s;
+        z-index: 50;
+        top: 0;
+        height: 100%;
+        background-color: darkgrey;
+        text-align: center;
+      }
+
+      .wel-mes {
+        z-index: 51;
+        top: 30%;
+        color: #fff;
+        transition: top 1s ease-in 2s;
+        -webkit-transition: top 1s ease-in 2s;
+        -moz-transition: top 1s ease-in 2s;
+        -o-transition: top 1s ease-in 2s;
+      }
+
+      /*================
+      =                =
+      =    NAV MENU    =
+      =                =
+      ================*/
+      nav {
+        position:fixed;
+        z-index: 99;
+        transform: translateX(-50%);
+        left: 50%;
+        top: 0;
+        width: 100%;
+        max-width: 1040px;
+        max-height: 80px;
+      }
+
+      #navLinks {
+        margin-right: 5%;
+        max-width: 66%;
+        float: right;
+        padding: 18px 0;
+      }
+
+      .menu-item {
+        display: inline-block;
+        margin: 0px 15px;
+        font-weight: bold;
+
+      }
+
+      .menu-link {
+        min-height: 40px;
+        min-width: 70px;
+        padding: 12px 12px;
+        border-radius: 5px;
+      }
+
+      .menu-link:hover, .CTA.menu-link:hover {
+        background-color: #65BB51;
+        transform: scale(1.1, 1.1);
+      }
+
+      .CTA.menu-link {
+        background-color: #1E0099;
+      }
+
+      #main-Logo {
+        margin: 8px 0 8px 10%;
+        max-width: 33%;
+        float: left;
+      }
+
+      .logo-img {
+        max-height: 64px;
+        display: block;
+      }
+
+      /*================
+      =                =
+      = Banner Content =
+      =                =
+      ================*/
+
+      .banner-content {
+        padding: 22% 0 17%;
+      }
+
+      .spec-lang span {
+        margin: 0 11px;
+      }
+
+      .spec-lang {
+        margin: 9px;
+      }
+
+      .v-port {
+        margin: 45px 0 15px;
+      }
+
+      h4 {
+        padding: 1%;
+      }
+
+      /*================
+      =                =
+      =  INTRO Content =
+      =                =
+      ================*/
+
+      #profPic {
+        border-radius: 15px;
+        margin: 2%;
+      }
+
+      .intro {
+        margin: 8% 5%;
+
+      }
+
+      .intro p {
+        padding: 5px;
+      }
+
+      /*================
+      =                =
+      =    PORTFOLIO   =
+      =                =
+      ================*/
+      .content {
+        vertical-align: baseline;
+      }
+      .port-item {
+        display: inline-block;
+        min-height: 250px;
+        background-color: grey;
+        width: 33.33%;
+        word-break: break-word;
+        overflow: hidden;
+        vertical-align: top;
+
+      }
+
+      .port-link {
+        min-height: 250px;
+
+      }
+
+      .port-link h3 {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+    </style>
     <script async src="js/perfmatters.js"></script>
   </head>
 
   <body>
-    <header>
-      <a href="/"><img class="nonMobile-View" src="img/Pilot-profile-md.jpg"></a>
-      <a href="/"><img class="mobile-View" src="img/Pilot-profile-sm.jpg"></a>
-      <p>Erin Macalligan<br><span>Front End Web-Development Nano-Degree Student</span></p>
+    <!--==================
+    ==                  ==
+    ==  Above the Fold  ==
+    ==     Content      ==
+    ==                  ==
+    ===================-->
+    <header class="container">
+<!--
+      <div id="welcome">
+        <h1 id="wel-mes"><strong>WELCOME</strong></h1>
+      </div>
+-->
+      <nav>
+        <div id="main-Logo">
+          <img class="logo-img" src="img/dusty-logo.png" ><!--onerror="this.onerror=null; this.src='img/dusty-logo.png'"-->
+        </div>
+        <div id="navLinks">
+          <ul>
+            <li class="menu-item"><a class="menu-link" href="#portfolio">PORTFOLIO</a></li>
+            <li class="menu-item"><a class="menu-link" href="#Me">ABOUT</a></li>
+            <!--CALL TO ACTION BUTTON-->
+            <li class="menu-item"><a class="CTA menu-link" href="mailto:help@unlikelyit.com">HIRE</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+        <!--TODO REMOVE IMG 'src' and use JS to detect screen size, then replace 'src' URL-->
+        <!--    <a href="/"><img class="" src="img/Pilot-profile-md.jpg"></a>    -->
+      <div class="banner-content">
+        <h1>FRONT END WEB DEVELOPMENT</h1>
+        <h3 class="spec-lang"><span>HTML</span>&bull;<span>CSS</span>&bull;<span>JavaScript</span></h3>
+        <h3 class="v-port">VIEW PORTFOLIO</h3>
+        <img src="img/Pilot-profile-xs.jpg" alt="Down arrow link to portfolio">
+      </div>
     </header>
 
     <div class="container">
-      <div class="hero">
-        <strong>I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br> Contact me: me@email.com
+      <div class="intro">
+        <img id="profPic" src="img/Pilot-profile-xs.jpg" alt="Erin's Profile Picture">
+        <h4>By Erin Macalligan</h4>
+        <p>A Front End Web-Development</p>
+        <p>Nano-Degree Student</p>
+        <p class="about"><strong>I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br><br> Contact me: me@email.com</p>
       </div>
-
       <div class="content">
         <ul>
-          <li>
+          <li class="port-item">
+            <a class="port-link" href="project-2048.html">
             <img src="img/build-your-own-2048.jpg">
-            <a href="project-2048.html">Build Your Own 2048!</a>
-            <p>I made my own version of 2048. How cool is that!?</p>
+            Build Your Own 2048!</a>
+            <h3>I made my own version of 2048. How cool is that?</h3>
           </li>
 
-          <li>
+          <li class="port-item">
+            <a class="port-link" href="project-webperf.html">
             <img src="img/web-performance-class.jpg">
-            <a href="project-webperf.html">Website Performance Optimization</a>
-            <p>Hey... this class looks familiar.</p>
+            Website Performance Optimization</a>
+            <h3>Hey... this class looks familiar.</h3>
           </li>
 
-          <li>
+          <li class="port-item">
+            <a class="port-link" href="project-mobile.html">
             <img src="img/mobile-devices.jpg">
-            <a href="project-mobile.html">Mobile Web Development</a>
-            <p>Making mobile apps isn't so hard after all.</p>
+            Mobile Web Development</a>
+            <h3>Making mobile apps isn't so hard after all.</h3>
           </li>
 
-          <li>
-            <img style="width: 100px;" src="views/images/pizzeria-sm.jpg">
-            <a href="views/pizza.html">Cam's Pizzeria</a>
-            <p>Who wants a performant pizza?</p>
+          <li class="port-item">
+            <a class="port-link" href="views/pizza.html">
+            <img src="img/pizzeria-xs.jpg">
+            Cam's Pizzeria</a>
+            <h3>Who wants a performant pizza?</h3>
           </li>
         </ul>
       </div>
@@ -70,7 +306,44 @@
 
 
     <footer>
-      <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
+      <p>&copy; Web Performance 2016 <span id="crp-stats"></span></p>
     </footer>
+    <script>
+      /*=======================
+      =    Set Profile Pic    =
+      =       After Load      =
+      =======================*/
+//      (function() {
+//        var picH = document.getElementById('profPic');
+//        picH.src = 'img/Pilot-profile-xs.jpg';
+//      })();
+
+      /*==================
+      = GOOGLE ANALYTICS =
+      ==================*/
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })
+      (window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-74101644-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async>
+      /*=======================
+      = GOOGLE's OPTIMIZE CSS =
+      =   source in README    =
+      =======================*/
+//      var cbCSS = function() {
+//        var l = document.createElement('link'); l.rel = 'stylesheet';
+//        l.href = 'css/style.css';
+//        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+//      };
+//      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+//        webkitRequestAnimationFrame || msRequestAnimationFrame;
+//      if (raf) raf(cbCSS);
+//      else window.addEventListener('load', cbCSS);
+    </script>
   </body>
 </html>

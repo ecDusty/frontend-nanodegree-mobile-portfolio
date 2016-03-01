@@ -1,3 +1,12 @@
+#welcome {
+  top: -950px !important;
+}
+
+#welcome h1 {
+  opacity: 0;
+}
+
+
 html {
   font-size: 100%;
   overflow-y: scroll;
@@ -5,34 +14,29 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: none;
 }
-body { margin: 0; font-size: 14px; line-height: 1.61; font-weight: 400; }
-body, button, input, select, textarea { font-family: 'Open Sans', sans-serif; color: #333; }
+body {font-size: 14px; line-height: 1.61; font-weight: 400;}
+body, button, input, select, textarea { /*font-family: 'Open Sans', sans-serif;*/ color: #333; }
+
+
 
 a { color: #12C; }
 a:visited { color: #61C; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { color: #c00; outline: 0; }
 
-b, strong { font-weight: bold; }
+/*b, strong { font-weight: bold; }*/
 pre, code { font-family: monospace, monospace; font-size: 1em; }
 ul, ol { margin: 1em 0; padding: 0 0 0 20px; }
 img { border: 0; max-width: 100%; }
 
-body { background: #fff; }
-header, footer, .container { max-width: 45em; margin: 0 auto; }
 
-header { padding: 0 0.5em; color: #C90B0B; }
-header img { border-radius: 50%; float: left; max-width: 70px; }
+/*footer, .container { max-width: 45em; margin: 0 auto; }*/
+
+header {color: #C90B0B; }
+header img#profPic { border-radius: 50%; float: left; max-width: 70px; }
 header p { font-size:1.5em; font-weight: bold; padding-left: 4em;}
 header p span { font-size: 0.8em; font-weight: normal;}
 
-.mobile-View {
-    display: none;
-}
-
-.nonMobile-View {
-    display: block;
-}
 
 .hero { padding: 2em; background-color: #f8f8f8; font-size:1.2em;
   border-bottom: 1px solid #ccc;
@@ -50,15 +54,6 @@ footer {
 }
 footer span { float: right; font-style: italic; }
 
-@media only screen and (max-width: 900px) {
-    .mobile-View {/*MOBILE*/
-        display: block;
-    }
-    
-    .nonMobile-View {
-        display: none;
-    }
-}
 /* Smartphones (portrait) */
 @media only screen and (max-width: 480px) {
   body { font-size: 12px;}
