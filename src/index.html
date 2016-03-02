@@ -43,7 +43,13 @@
       }
 
       ol, ul {
-        list-style: none;
+        font-size: 0;
+        line-height: 0;
+      }
+
+      li, .port-item, .menu-item {
+        font-size: 14px !important;
+        line-height: 1em !important;
       }
 
       header {
@@ -153,6 +159,7 @@
 
       .banner-content {
         padding: 22% 0 17%;
+        color: #fff;
       }
 
       .spec-lang span {
@@ -165,6 +172,10 @@
 
       .v-port {
         margin: 45px 0 15px;
+      }
+
+      .arrow {
+        max-width: 50px
       }
 
       h4 {
@@ -199,11 +210,20 @@
       .content {
         vertical-align: baseline;
       }
+
+      .port-item, .port-link, .port-link img, .port-item h3 {
+        transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        -webkit-transition: all 0.4s;
+        color: #fff;
+      }
+
       .port-item {
         display: inline-block;
-        min-height: 250px;
+        position: relative;
         background-color: grey;
-        width: 33.33%;
+        width: 33.3%;
         word-break: break-word;
         overflow: hidden;
         vertical-align: top;
@@ -211,14 +231,37 @@
       }
 
       .port-link {
-        min-height: 250px;
+        min-height: 270px;
+        position: relative;
+      }
+
+      .port-link img {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
 
       }
 
-      .port-link h3 {
-        position: relative;
-        top: 0;
+      .port-item h3 {
+        position: absolute;
+        bottom: 0;
         left: 0;
+        right: 0;
+        padding: 10%;
+        transform: translate(0, 102%);
+        background-color: rgb(0, 0, 0, 0.7);
+      }
+
+      .port-item:hover h3 {
+        transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+      }
+
+      .port-item:hover a {
+        transform: scale(0.9, 0.9);
       }
 
     </style>
@@ -259,12 +302,17 @@
         <h1>FRONT END WEB DEVELOPMENT</h1>
         <h3 class="spec-lang"><span>HTML</span>&bull;<span>CSS</span>&bull;<span>JavaScript</span></h3>
         <h3 class="v-port">VIEW PORTFOLIO</h3>
-        <img src="img/Pilot-profile-xs.jpg" alt="Down arrow link to portfolio">
+        <a href="#portfolio"><img class="arrow" src="img/down%20arrow%20copy.svg" alt="Down arrow link to portfolio"></a>
       </div>
     </header>
-
+    <!--==================
+    ==                  ==
+    ==  Below the Fold  ==
+    ==     Content      ==
+    ==                  ==
+    ===================-->
     <div class="container">
-      <div class="intro">
+      <div id="Me" class="intro">
         <img id="profPic" src="img/Pilot-profile-xs.jpg" alt="Erin's Profile Picture">
         <h4>By Erin Macalligan</h4>
         <p>A Front End Web-Development</p>
@@ -272,33 +320,27 @@
         <p class="about"><strong>I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br><br> Contact me: me@email.com</p>
       </div>
       <div class="content">
-        <ul>
+        <ul id="portfolio">
           <li class="port-item">
-            <a class="port-link" href="project-2048.html">
-            <img src="img/build-your-own-2048.jpg">
-            Build Your Own 2048!</a>
-            <h3>I made my own version of 2048. How cool is that?</h3>
+            <a class="port-link" href="project-2048.html"><img src="img/build-your-own-2048.jpg"></a>
+            <h3>Build Your Own 2048 (Sample Project)</h3>
           </li>
 
           <li class="port-item">
-            <a class="port-link" href="project-webperf.html">
-            <img src="img/web-performance-class.jpg">
-            Website Performance Optimization</a>
-            <h3>Hey... this class looks familiar.</h3>
+            <a class="port-link" href="project-webperf.html"><img src="img/web-performance-class.jpg"></a>
+            <h3>Web Performance Optimization (P4 Course)</h3>
           </li>
 
           <li class="port-item">
-            <a class="port-link" href="project-mobile.html">
-            <img src="img/mobile-devices.jpg">
-            Mobile Web Development</a>
-            <h3>Making mobile apps isn't so hard after all.</h3>
+            <a class="port-link" href="project-mobile.html"><img src="img/mobile-devices.jpg"></a>
+            <h3>Mobile Web Development</h3>
           </li>
 
           <li class="port-item">
             <a class="port-link" href="views/pizza.html">
             <img src="img/pizzeria-xs.jpg">
-            Cam's Pizzeria</a>
-            <h3>Who wants a performant pizza?</h3>
+            </a>
+            <h3>Dustys's Pizzeria</h3>
           </li>
         </ul>
       </div>
