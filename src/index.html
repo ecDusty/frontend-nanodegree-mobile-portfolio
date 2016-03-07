@@ -30,6 +30,10 @@
 
       header, footer, .container {
         width: 100%;
+        transition: background-color 0.5s ease-out;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
       }
 
       a {
@@ -52,13 +56,17 @@
         line-height: 1em !important;
       }
 
-      header {
-        background-color: #FD5308;
-        min-height: 350px;
-      }
-
       footer {
         margin: 4% 0;
+      }
+
+      .orangeBackground {
+        background-color: #FD5308;
+        /*background-color: rgba(253, 83, 8);*/
+        background: -webkit-linear-gradient(#FD5308, #FD5308, rgba(253, 83, 8, 0.3)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#FD5308, #FD5308, rgba(253, 83, 8, 0.3)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#FD5308, #FD5308, rgba(253, 83, 8, 0.3)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#FD5308, #FD5308, rgba(253, 83, 8, 0.3));
       }
       /*================
       =                =
@@ -99,12 +107,17 @@
       =    NAV MENU    =
       =                =
       ================*/
-      nav {
+      #menu {
+        width: 100%;
         position:fixed;
         z-index: 99;
         transform: translateX(-50%);
         left: 50%;
         top: 0;
+      }
+
+      nav {
+        margin: 0 auto;
         width: 100%;
         max-width: 1040px;
         max-height: 80px;
@@ -133,11 +146,13 @@
 
       .menu-link:hover, .CTA.menu-link:hover {
         background-color: #65BB51;
+        /*background-color: rgba(101, 187, 87, 0.8)*/
         transform: scale(1.1, 1.1);
       }
 
       .CTA.menu-link {
         background-color: #1E0099;
+        /*background-color: rgba(30, 0, 153);*/
       }
 
       #main-Logo {
@@ -157,9 +172,21 @@
       =                =
       ================*/
 
+      header {
+        min-height: 350px;
+        background-color: #FD5308;
+      }
+
       .banner-content {
         padding: 22% 0 17%;
         color: #fff;
+      }
+      .banner-content a {
+        border-radius: 60%;
+      }
+
+      .banner-content a:hover {
+        background-color: rgba(30, 0, 153, 0.3);
       }
 
       .spec-lang span {
@@ -174,8 +201,9 @@
         margin: 45px 0 15px;
       }
 
-      .arrow {
-        max-width: 50px
+      .arrow-link {
+        width: 40px;
+        margin: auto;
       }
 
       h4 {
@@ -212,22 +240,20 @@
       }
 
       .port-item, .port-link, .port-link img, .port-item h3 {
-        transition: all 0.4s;
-        -o-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -webkit-transition: all 0.4s;
+        transition: transform 0.4s;
+        -o-transition: transform 0.4s;
+        -moz-transition: transform 0.4s;
+        -webkit-transition: transform 0.4s;
         color: #fff;
       }
 
       .port-item {
         display: inline-block;
         position: relative;
-        background-color: grey;
-        width: 33.3%;
         word-break: break-word;
         overflow: hidden;
         vertical-align: top;
-
+        width: 50%;
       }
 
       .port-link {
@@ -239,17 +265,20 @@
         position: absolute;
         transform: translate(-50%, -50%);
         top: 50%;
+        max-width: 200px;
+        border-radius: 10px;
 
       }
 
       .port-item h3 {
         position: absolute;
+        display: block;
         bottom: 0;
         left: 0;
         right: 0;
         padding: 10%;
         transform: translate(0, 102%);
-        background-color: rgb(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.6);
       }
 
       .port-item:hover h3 {
@@ -262,6 +291,12 @@
 
       .port-item:hover a {
         transform: scale(0.9, 0.9);
+      }
+
+      @media only screen and (min-width: 960px) {
+        .port-item {
+          width: 33.3%;
+        }
       }
 
     </style>
@@ -281,19 +316,21 @@
         <h1 id="wel-mes"><strong>WELCOME</strong></h1>
       </div>
 -->
-      <nav>
-        <div id="main-Logo">
-          <img class="logo-img" src="img/dusty-logo.png" ><!--onerror="this.onerror=null; this.src='img/dusty-logo.png'"-->
-        </div>
-        <div id="navLinks">
-          <ul>
-            <li class="menu-item"><a class="menu-link" href="#portfolio">PORTFOLIO</a></li>
-            <li class="menu-item"><a class="menu-link" href="#Me">ABOUT</a></li>
-            <!--CALL TO ACTION BUTTON-->
-            <li class="menu-item"><a class="CTA menu-link" href="mailto:help@unlikelyit.com">HIRE</a></li>
-          </ul>
-        </div>
-      </nav>
+      <div id="menu" class>
+        <nav>
+          <div id="main-Logo">
+            <img class="logo-img" src="img/dusty-logo.png" ><!--onerror="this.onerror=null; this.src='img/dusty-logo.png'"-->
+          </div>
+          <div id="navLinks">
+            <ul>
+              <li class="menu-item"><a class="menu-link" href="#portfolio">PORTFOLIO</a></li>
+              <li class="menu-item"><a class="menu-link" href="#Me">ABOUT</a></li>
+              <!--CALL TO ACTION BUTTON-->
+              <li class="menu-item"><a class="CTA menu-link" href="mailto:help@unlikelyit.com">HIRE</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
 
 
         <!--TODO REMOVE IMG 'src' and use JS to detect screen size, then replace 'src' URL-->
@@ -302,7 +339,7 @@
         <h1>FRONT END WEB DEVELOPMENT</h1>
         <h3 class="spec-lang"><span>HTML</span>&bull;<span>CSS</span>&bull;<span>JavaScript</span></h3>
         <h3 class="v-port">VIEW PORTFOLIO</h3>
-        <a href="#portfolio"><img class="arrow" src="img/down%20arrow%20copy.svg" alt="Down arrow link to portfolio"></a>
+        <a class="arrow-link" href="#portfolio"><img class="arrow" src="img/down%20arrow%20copy.svg" alt="Down arrow link to portfolio"></a>
       </div>
     </header>
     <!--==================
@@ -321,27 +358,34 @@
       </div>
       <div class="content">
         <ul id="portfolio">
-          <li class="port-item">
-            <a class="port-link" href="project-2048.html"><img src="img/build-your-own-2048.jpg"></a>
-            <h3>Build Your Own 2048 (Sample Project)</h3>
-          </li>
-
-          <li class="port-item">
-            <a class="port-link" href="project-webperf.html"><img src="img/web-performance-class.jpg"></a>
-            <h3>Web Performance Optimization (P4 Course)</h3>
-          </li>
-
-          <li class="port-item">
-            <a class="port-link" href="project-mobile.html"><img src="img/mobile-devices.jpg"></a>
-            <h3>Mobile Web Development</h3>
-          </li>
-
-          <li class="port-item">
+          <li style="background-color: #FD5308;"class="port-item">
             <a class="port-link" href="views/pizza.html">
-            <img src="img/pizzeria-xs.jpg">
+            <img src="views/images/pizza.svg">
             </a>
             <h3>Dustys's Pizzeria</h3>
           </li>
+          <li class="port-item" style="background-color: #000;">
+            <a class="port-link" href="pages/project-2048.html"><img src="img/build-your-own-2048.jpg"></a>
+            <h3>Build Your Own 2048 (Sample Project)</h3>
+          </li>
+          <li class="port-item" style="background-color: darkblue;">
+            <a class="port-link" href="pages/project-webperf.html"><img src="img/web-performance-class.jpg"></a>
+            <h3>Web Performance Optimization (P4 Course)</h3>
+          </li>
+          <li class="port-item" style="background-color: #65BB51;">
+            <a class="port-link" href="pages/game/game.html"><img src="img/arcade-game.jpg"></a>
+            <h3>Frogger Arcade Game (Re-Imagined)</h3>
+          </li>
+          <li class="port-item" style="background-color: white;">
+            <a class="port-link" href="pages/project-mobile.html"><img src="img/mobile-devices.jpg"></a>
+            <h3>Mobile Web Development</h3>
+          </li>
+          <li class="port-item" style="background-color: #FD5308;">
+            <a class="port-link" href="pages/resume/resume.html"><img src="img/first-resume.jpg"></a>
+            <h3>Getting to know JavaScript Resume</h3>
+          </li>
+
+
         </ul>
       </div>
     </div>
@@ -359,6 +403,23 @@
 //        var picH = document.getElementById('profPic');
 //        picH.src = 'img/Pilot-profile-xs.jpg';
 //      })();
+
+      /*=======================
+      =    Detects Scroll &   =
+      = Changes Nav Bckground =
+      =======================*/
+      var navMenu = document.getElementById("menu");
+      var scrollHeightCheck = function() {
+        var y = window.scrollY;
+        var infoPos = document.getElementById("Me").scrollHeight;
+        if (y >= (infoPos+80)) {
+          navMenu.className = "orangeBackground";
+        } else {
+          navMenu.className = "";
+        }
+      };
+
+      window.addEventListener("scroll", scrollHeightCheck);
 
       /*==================
       = GOOGLE ANALYTICS =
