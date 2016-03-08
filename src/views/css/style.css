@@ -1,40 +1,3 @@
-* {
-  outline: 1px solid red !important;
-}
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -box-sizing: border-box;
-}
-
-body {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  background: black;
-}
-
-input {
-  background: white;
-  border: 0px;
-  font-size: 18px;
-}
-
-form {
-  display: inline-block;
-}
-
-.centered {
-  text-align: center;
-}
-
-#pizzaSize {
-  font-weight: 800;
-}
-
-.mover {
-  position: fixed;
-  width: 256px;
-  z-index: -1;
-}
 
 .randomPizzaContainer {
   float: left;
@@ -48,6 +11,4 @@ form {
   clear:both;
 }
 
- .container {
-  background-color: rgba(240, 60, 60, 0.8);
-}
+
