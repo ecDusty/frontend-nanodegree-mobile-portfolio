@@ -1,0 +1,96 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -box-sizing: border-box;
+}
+
+#welcome {
+  top: -950px !important;
+}
+
+#welcome h1 {
+  opacity: 0;
+}
+
+/*================
+=                =
+=    PORTFOLIO   =
+=                =
+================*/
+.content {
+  vertical-align: baseline;
+}
+
+.port-item, .port-link, .port-link img, .port-item h3 {
+  transition: transform 0.4s;
+  -o-transition: transform 0.4s;
+  -moz-transition: transform 0.4s;
+  -webkit-transition: transform 0.4s;
+  color: #fff;
+}
+
+.port-item {
+  display: inline-block;
+  position: relative;
+  word-break: break-word;
+  overflow: hidden;
+  vertical-align: top;
+  width: 50%;
+}
+
+.port-link {
+  min-height: 270px;
+  position: relative;
+}
+
+.port-link img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  max-width: 200px;
+  border-radius: 10px;
+
+}
+
+.port-item h3 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5% 10%;
+  transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.port-item:hover h3 {
+  transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+}
+
+.port-item:hover a {
+  transform: scale(0.9, 0.9);
+}
+
+/*Sets layout for Non-Mobile Devices*/
+
+@media only screen and (min-width: 960px) {
+  .port-item {
+    width: 33.3%;
+  }
+
+  .port-item h3 {
+    transform: translate(0, 102%);
+    -o-transform: translate(0, 102%);
+    -ms-transform: translate(0, 102%);
+    -moz-transform: translate(0, 102%);
+    -webkit-transform: translate(0, 102%);
+  }
+}
