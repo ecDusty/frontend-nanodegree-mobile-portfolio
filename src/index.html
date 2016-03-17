@@ -7,15 +7,9 @@
     <meta name="author" content="Erin Macalligan">
     <title>Dusty's Portfolio</title>
 
-<!-- Hmm, what is the impact of web fonts on speed? Measure it...
-      The Answer is Alot, consider using a font commonly found on all browsers, than have the font you need load via JavaScript, after your content has loaded-->
-<!--    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">-->
-<!--    <link href="css/style.css" rel="stylesheet">-->
-<!--    <link href="css/print.css" rel="stylesheet">-->
-<!--    <script async src="http://www.google-analytics.com/analytics.js"></script>-->
     <style>
       * {
-        box-sizing: border-box !impotant;
+        box-sizing: border-box !important;
         -moz-box-sizing: border-box !important;
         -webkit-box-sizing: border-box !important;
         margin: 0;
@@ -24,7 +18,6 @@
       }
 
       body {
-        background: #fff;
         font-family: "Trebuchet MS", sans-serif;
         font-size: 14px;
       }
@@ -182,7 +175,7 @@
         .menu-link {
           min-height: 20px;
           min-width: 50px;
-          padding: 5px;
+          padding: 12px 7px;
         }
 
         .logo-img {
@@ -196,6 +189,11 @@
       =                =
       ================*/
 
+      @keyframes arrowMove {
+        0% {transform: translateY(-5%);}
+        50% {transform: translateY(5%);}
+        100% {transform: translateY(-5%);}
+      }
       header {
         min-height: 350px;
         background-color: #FD5308;
@@ -225,6 +223,7 @@
         margin: auto;
         position: relative;
         border-radius: 50%;
+        animation: arrowMove 2s ease-out 0s infinite;
       }
 
       /*Arrow Button to portfolio Styles*/
@@ -267,7 +266,7 @@
         padding: 5px;
       }
     </style>
-    <script async src="js/perfmatters.js"></script>
+    <script src="js/perfmatters.js" async></script>
   </head>
 
   <body>
@@ -284,7 +283,7 @@
       <div id="menu" class>
         <nav>
           <div id="main-Logo">
-            <img class="logo-img" src="img/ecDusty-logo.svg">
+            <img class="logo-img" src="img/ecDusty-logo.svg" alt="ecDusty Logo, Hong Kong Web Developer">
           </div>
           <div id="navLinks">
             <ul>
@@ -297,12 +296,12 @@
         </nav>
       </div>
       <div class="banner-content">
-        <h1>FRONT END WEB DEVELOPMENT</h1>
+        <h1 id="title">FRONT END WEB DEVELOPMENT</h1>
         <h3 class="spec-lang"><span>HTML</span>&bull;<span>CSS</span>&bull;<span>JavaScript</span></h3>
         <h3 class="v-port">VIEW PORTFOLIO</h3>
         <a class="arrow-link" href="#portfolio">
-          <img class="arrow-w" src="img/down-arrow-white.svg" alt="Down arrow link to portfolio">
-          <img class="arrow-b" src="img/down-arrow-blue.svg">
+          <img class="arrow-w" src="img/down-arrow-white.svg" alt="Down arrow link to portfolio, Hong Kong Web Developer">
+          <img class="arrow-b" src="img/down-arrow-blue.svg" alt="Down arrow link to portfolio, Hong Kong Web Developer">
         </a>
       </div>
     </header>
@@ -322,30 +321,38 @@
     ===================-->
       <div class="content">
         <ul id="portfolio">
-          <li style="background-color: #FD5308;"class="port-item">
+          <li style="background-color: #FD5308;" class="port-item">
             <a class="port-link" href="views/pizza.html">
-            <img src="views/images/pizza.svg">
+            <img src="views/images/pizza.svg" alt="Pizza Store Project, Hong Kong Web Developer">
             </a>
             <h3>Dustys's Pizzeria</h3>
           </li>
           <li class="port-item" style="background-color: #000;">
-            <a class="port-link" href="pages/project-2048.html"><img src="img/build-your-own-2048.jpg"></a>
+            <a class="port-link" href="pages/project-2048.html"><img src="img/build-your-own-2048.jpg" alt="2048 Game Page Test, Hong Kong Web Developer"></a>
             <h3>Build Your Own 2048 (Sample Project)</h3>
           </li>
           <li class="port-item" style="background-color: darkblue;">
-            <a class="port-link" href="pages/project-webperf.html"><img src="img/web-performance-class.jpg"></a>
+            <a class="port-link" href="pages/project-webperf.html">
+              <img src="img/web-performance-class.jpg" alt="Web Performance Page test, Hong Kong Web Developer">
+            </a>
             <h3>Web Performance Optimization (P4 Course)</h3>
           </li>
           <li class="port-item" style="background-color: #65BB51;">
-            <a class="port-link" href="pages/game/game.html"><img src="img/arcade-game.jpg"></a>
+            <a class="port-link" href="pages/game/game.html">
+              <img src="img/arcade-game.jpg" alt="HTML 5 Canvas Game Project, Hong Kong Web Developer">
+            </a>
             <h3>Frogger Arcade Game (Re-Imagined)</h3>
           </li>
           <li class="port-item" style="background-color: white;">
-            <a class="port-link" href="pages/project-mobile.html"><img src="img/mobile-devices.jpg"></a>
+            <a class="port-link" href="pages/project-mobile.html">
+              <img src="img/mobile-devices.jpg" alt="Mobile Page Test, Hong Kong Web Developer">
+            </a>
             <h3>Mobile Web Development</h3>
           </li>
           <li class="port-item" style="background-color: #FD5308;">
-            <a class="port-link" href="pages/resume/resume.html"><img src="img/first-resume.jpg"></a>
+            <a class="port-link" href="pages/resume/resume.html">
+              <img src="img/first-resume.jpg" alt="Resume Portfolio Project, Hong Kong Web Developer">
+            </a>
             <h3>Getting to know JavaScript Resume</h3>
           </li>
 
@@ -358,7 +365,7 @@
     <footer>
       <p>&copy; Web Performance 2016 <span id="crp-stats"></span></p>
     </footer>
-    <script async>
+    <script>
       /*=======================
       =    Detects Scroll &   =
       = Changes Nav Bckground =
@@ -366,8 +373,8 @@
       var navMenu = document.getElementById("menu");
       var scrollHeightCheck = function() {
         var y = window.scrollY;
-        var infoPos = document.getElementById("Me").scrollHeight;
-        if (y >= (infoPos+50)) {
+        var infoPos = document.getElementById("title").scrollHeight;
+        if (y >= (infoPos)) {
           navMenu.className = "orangeBackground";
         } else {
           navMenu.className = "";

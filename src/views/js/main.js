@@ -467,22 +467,31 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
     var newWidth;
     var newHeight = 325;
+    var w1 = 25,
+        w2 = 33.3,
+        w3 = 50;
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    if (screenWidth < 992) {
+      w1 = 33.3;
+      w2 = 50;
+      w3 = 100;
+    }
 
     switch(size) {
       case "1":
-        newWidth = 25;
+        newWidth = w1;
         newHeight = 350;
         break;
       case "2":
-        newWidth = 33.3;
+        newWidth = w2;
         break;
       case "3":
-        newWidth = 50;
+        newWidth = w3;
         break;
       default:
         console.log("bug in changePizzaSizes Switch");
     }
-
     var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
 
     for (var i = 0; i < randomPizzas.length; i++) {
@@ -559,20 +568,14 @@ function updatePositions() {
   }
 }
 
-// runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
-
-
-// Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function() {
-
+function createPizzas () {
   /* Cross browser supported code that will grab the windows Height & Width*/
   var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
   var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
   var cols = Math.ceil(width/200),
-      rows = Math.ceil(height/200),
+      rows = Math.ceil(height/230),
       s = 256;
   for (var i = 0; i < rows*cols; i++) {
     var elem = document.createElement('img');
@@ -585,4 +588,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
   updatePositions();
-});
+}
+
+// runs updatePositions on scroll
+window.addEventListener('scroll', updatePositions);
+
+// Generates the sliding pizzas when the page loads.
+createPizzas();
