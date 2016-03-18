@@ -4,18 +4,22 @@ Welcome to *Dusty's* online portfolio. This was forked from [Udacity's Original 
 
 I got a little carried away with the design layout.
 
+## Hosting
+
+The Hosting solution I used to test the distribution code of my project was GitHub Pages.
+
+Check out the site - _[Here]_
+
+If you'd like to follow suit, check out GitHubs' guide to [GitHub Pages]. This will give you a great place to test distribution ready code.
+
+GitHub Pages acts like a separate repository. Once your code is ready, you simiply push it to the repository, give it about a minute or 2 to load on their end, and boom you've got a hosted website.
+
 ## Folder Layout
 
 As you can see there are just 3 folders within this repository:
   * _Adobe Images_: Which with is where my AI versions of the customer logo and down arrow I created
   * _src_: Contains the source code of my Mobile Profile site. The easy to read and edit version of the site.
   *_dist_: This is the distribution code of my site. All the code here is just the minified versions of the source code.
-
-## Hosting
-
-The Hosting solution I used to test the distribution code of my project was GitHub Pages. If you'd like to follow suit, check out GitHubs' guide to [GitHub Pages]. This will give you a great place to test distribution ready code.
-
-GitHub Pages acts like a separate repository. Once your code is ready, you simiply push it to the repository, give it about a minute or 2 to load on their end, and boom you've got a hosted website.
 
 ## What Has been done
 
@@ -78,6 +82,7 @@ A faster way, while using the Brackets Text-Editor, would be to use [Brackets-Mi
     * Not part of the project guidelines but it's good practice!
 
 [Udacity's Original P4]: <https://github.com/udacity/frontend-nanodegree-mobile-portfolio> "Udacity's FrontEnd Mobile Portfolio P4 Source Code"
+[Here]: <http://ecdusty.github.io/> "ecDusty's Live Mobile Portfolio"
 [GO-CSS]: <https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery> "Google's Optimized CSS Delivery"
 [Ian]: <http://ianlunn.co.uk/> "Ian Lunn's Website Portfolio"
 [Minify-Code]: <http://minifycode.com/html-minifier/> "Minifycode.com - A great minication resource"
