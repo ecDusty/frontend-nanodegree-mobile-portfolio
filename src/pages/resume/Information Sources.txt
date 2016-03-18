@@ -1,0 +1,12 @@
+http://stackoverflow.com/questions/3622756/button-center-css
+http://css-tricks.com/
+https://developers.google.com/maps/documentation/javascript/tutorial
+http://www.w3schools.com/css/
+http://www.w3.org/
+http://mdn.beonex.com/en/DOM/Element.querySelectorAll.html
+https://developer.mozilla.org/en-US/docs/Web/API/document.querySelector
+http://mdn.beonex.com/en/DOM/Element.querySelectorAll.html
+http://stackoverflow.com/questions/175739/is-there-a-built-in-way-in-javascript-to-check-if-a-string-is-a-valid-number
+http://coffeescript.org/
+http://bl.ocks.org/mbostock/5944371
+http://discussions.udacity.com/t/google-maps-project-2-not-showing/4729 <!--- This one was when I figured out that I didn't edit the HTML correctly so I could use the map :(... )

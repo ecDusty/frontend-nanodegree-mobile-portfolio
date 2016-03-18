@@ -1,80 +1,90 @@
-# Welcome to Dusty's Portfolio
+# Udacity FrontEnd P4 - MOBILE PORTFOLIO
 
-An attempt to learn **Mark Down**. At least I'm _finally_ **Learning** it.
+Welcome to *Dusty's* online portfolio. This was forked from [Udacity's Original P4] and modified initially to meet the criteria. During the build process I believed it would be more realistic if the Portfolio refects the actual work that I have done. So my goal is to optimize the sites already attached to the Mob Portfolio and then add my own to the portfolio list.
 
-_Go ME!_
+I got a little carried away with the design layout.
 
-## Website Performance Optimization portfolio project
+## Hosting
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+The Hosting solution I used to test the distribution code of my project was GitHub Pages.
 
-To get started, check out the repository, inspect the code,
+Check out the site - _[Here]_
 
-### Getting started
+If you'd like to follow suit, check out GitHubs' guide to [GitHub Pages]. This will give you a great place to test distribution ready code.
 
-####Part 1: Optimize PageSpeed Insights score for index.html
+GitHub Pages acts like a separate repository. Once your code is ready, you simiply push it to the repository, give it about a minute or 2 to load on their end, and boom you've got a hosted website.
 
-Some useful tips to help you get started:
+## Folder Layout
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+As you can see there are just 3 folders within this repository:
+  * _Adobe Images_: Which with is where my AI versions of the customer logo and down arrow I created
+  * _src_: Contains the source code of my Mobile Profile site. The easy to read and edit version of the site.
+  *_dist_: This is the distribution code of my site. All the code here is just the minified versions of the source code.
 
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
+## What Has been done
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
+1. My own information has been put into the portfolio and I've add a new design style that I like
+   * I got inspiration from [Ian]'s portfolio.
+   * The logo and down arrow I created both using Adobe Illustrator (I include the image & CSV files in the src folder. The actual AI files are in the Adobe folder)
 
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ngrok 8080
-  $> ngrok http 8080
-  ```
+2. All images have been optimized
+   * Images have been dropped in size and saved in the smallest needed formart, optimized for web use, using Adobe Photoshop.
+   * All images have been placed locally within the site:
+      * This cuts down on time connecting with other servers.
+   * The floating pizza image in the back of the Pizzeria shop has been dropped in size, by decreasing it's width & height and using a web optimized version produced by Photoshop.
 
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
+3. Improvements to the Pizzeria
+   * Images have been dropped in size and saved in the smallest formart, optimized for web use, using Adobe Photoshop.
+   * Changes to Floating Pizzas in the background:
+     * Only enough pizzas are created to cover the screen. How This is done:
+       1. The JS gets the width of the screen, then only generates enough pizzas in a row that will be needed.
+       2. The JS also grabs the height of the screen, the only generating enough pizza rows to cover the screen.
+       * NOW ISSUE: Should the screen size (Width & Height) change, the number of background pizza elements will always stay the same
 
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
+4. Optimized CSS by inlining only the Critical styles, and asyncing the stylesheet (Ensuring only 1 css file is needed)
+    * Found the idea and code at [GO-CSS] page.
+      * It was altered to fit my needs
+      * This can also be used to load large images / videos that are below the fold after the entire page has loaded.
+    * By using JS to load the required CSS file after the page had loaded, allows the above the fold content to load first.
 
-####Part 2: Optimize Frames per Second in pizza.html
+5. All HTML, CSS and JavaScript files have been Minified
+    * To minify the HTML I used [Minify-Code]. A  great minification tool website, offer minifcation for a web dev files
+    * To minify my CSS and JavaScript in installed an extension to my text editor (Brackets) called [Brackets-Minifier].
+       * This minifier created '.min.js' / '.min.css' versions of all my CSS & Javascript files which would then need to be reorganized into my 'dist' folder (or 'Distribution' Folder)
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
 
-You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
+## Creating Distribution Ready Code From Your Source Code
 
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
+Once you've tweeked your source code to your liking, its  time to minify your HTML, CSS and JS. Don't just minify your source code files! This is very important to leave your source code files as they are.
 
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+To start, copy all files in your 'src' folder and move them to the 'dist' folder.
 
-### Sample Portfolios
+  * If you don't want all these copied files to be moved onto your repository as well you'll need to create a .gitignore file in the base repository folder. In the gitignore file you'll need to have the following:
+```
+dist/**
+```
+  * This will tell git to ignore all files within the dist folder, but will still sinc this folder with the repository
 
-Feeling uninspired by the portfolio? Here's a list of cool portfolios I found after a few minutes of Googling.
+### Minifying your code
+#### HTML
+The next step from here would be to minify your HTML. Use the [Minify-Code] resource to create the minified versions of all your html code, and use your text editor to replace it within the HTML files in your 'dist' folder.
 
-* <a href="http://www.reddit.com/r/webdev/comments/280qkr/would_anybody_like_to_post_their_portfolio_site/">A great discussion about portfolios on reddit</a>
-* <a href="http://ianlunn.co.uk/">http://ianlunn.co.uk/</a>
-* <a href="http://www.adhamdannaway.com/portfolio">http://www.adhamdannaway.com/portfolio</a>
-* <a href="http://www.timboelaars.nl/">http://www.timboelaars.nl/</a>
-* <a href="http://futoryan.prosite.com/">http://futoryan.prosite.com/</a>
-* <a href="http://playonpixels.prosite.com/21591/projects">http://playonpixels.prosite.com/21591/projects</a>
-* <a href="http://colintrenter.prosite.com/">http://colintrenter.prosite.com/</a>
-* <a href="http://calebmorris.prosite.com/">http://calebmorris.prosite.com/</a>
-* <a href="http://www.cullywright.com/">http://www.cullywright.com/</a>
-* <a href="http://yourjustlucky.com/">http://yourjustlucky.com/</a>
-* <a href="http://nicoledominguez.com/portfolio/">http://nicoledominguez.com/portfolio/</a>
-* <a href="http://www.roxannecook.com/">http://www.roxannecook.com/</a>
-* <a href="http://www.84colors.com/portfolio.html">http://www.84colors.com/portfolio.html</a>
+#### CSS & Javascript
+There are 2 ways to minify the CSS and JavaScript. First (and more time consuming) would be to go through every file in the dist folder, copy the code into [Minify-Code]'s minifier for CSS & JS and then copy it back into the appropriate file.
+
+A faster way, while using the Brackets Text-Editor, would be to use [Brackets-Minifier] and run 'Minify Project'. This will create a minified version of each file within the entire project (e.g: it creates 'style.min.css'). After running the program, you'll just need to delete all the original css & js files in the dist folder. While doing this, also rename the newly created minifed files (e.g: 'style.min.css' rename to -> 'style.css'). If you've successfully removed the extra '.min' from all the files, and deleted all the original none minified versions then you're good to go with the distribution of your website.
+
+
+## The TO-DO List
+
+1. Make a hamberger mobile menu
+    * Not part of the project guidelines but it's good practice!
+
+[Udacity's Original P4]: <https://github.com/udacity/frontend-nanodegree-mobile-portfolio> "Udacity's FrontEnd Mobile Portfolio P4 Source Code"
+[Here]: <http://ecdusty.github.io/> "ecDusty's Live Mobile Portfolio"
+[GO-CSS]: <https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery> "Google's Optimized CSS Delivery"
+[Ian]: <http://ianlunn.co.uk/> "Ian Lunn's Website Portfolio"
+[Minify-Code]: <http://minifycode.com/html-minifier/> "Minifycode.com - A great minication resource"
+[Brackets-Minifier]: <https://github.com/abagshaw/brackets-minifier> "Brackets Minifier by Andrew Bagshaw"
+[GitHub Pages]: <https://pages.github.com/> "GitHub hosting solution GitHub Pages"

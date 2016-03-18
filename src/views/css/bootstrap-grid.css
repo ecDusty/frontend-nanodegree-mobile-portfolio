@@ -10,7 +10,7 @@
  */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
-
+/*MOVED TO INLINE CSS IN HEAD
 img {
   vertical-align: middle;
 }
@@ -20,9 +20,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+*/
+/* BOOTSTRAP CODE NOT USED
 .img-rounded {
   border-radius: 6px;
 }
+
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
@@ -46,6 +49,8 @@ hr {
   border: 0;
   border-top: 1px solid #eeeeee;
 }
+
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -65,6 +70,17 @@ hr {
   overflow: visible;
   clip: auto;
 }
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+*/
+
+/*MOVED TO INLINE CSS IN HEAD
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -86,16 +102,14 @@ hr {
     width: 1170px;
   }
 }
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+
 .row {
   margin-left: -15px;
   margin-right: -15px;
-}
+}*/
+
+
+/* Moved to INLINE CSS in HEAD
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
@@ -104,7 +118,7 @@ hr {
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
-}
+}*/
 .col-xs-12 {
   width: 100%;
 }
@@ -141,6 +155,8 @@ hr {
 .col-xs-1 {
   width: 8.33333333%;
 }
+
+/*
 .col-xs-pull-12 {
   right: 100%;
 }
@@ -258,6 +274,8 @@ hr {
 .col-xs-offset-0 {
   margin-left: 0%;
 }
+*/
+/* Unnessecary code!
 @media (min-width: 768px) {
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
@@ -415,14 +433,15 @@ hr {
   .col-sm-offset-0 {
     margin-left: 0%;
   }
-}
+} */
 @media (min-width: 992px) {
+  /* THIS WAS MOVED TO INLINE in HEAD
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
   .col-md-12 {
     width: 100%;
-  }
+  }*/
   .col-md-11 {
     width: 91.66666667%;
   }
@@ -432,21 +451,24 @@ hr {
   .col-md-9 {
     width: 75%;
   }
+  /*MOVED TO INLINE IN HEAD
   .col-md-8 {
     width: 66.66666667%;
-  }
+  }*/
   .col-md-7 {
     width: 58.33333333%;
   }
+  /*MOVED TO INLINE IN HEAD
   .col-md-6 {
     width: 50%;
-  }
+  }*/
   .col-md-5 {
     width: 41.66666667%;
   }
+  /*MOVED TO INLINE IN HEAD
   .col-md-4 {
     width: 33.33333333%;
-  }
+  }*/
   .col-md-3 {
     width: 25%;
   }
@@ -456,6 +478,7 @@ hr {
   .col-md-1 {
     width: 8.33333333%;
   }
+  /*NOT NEEDED
   .col-md-pull-12 {
     right: 100%;
   }
@@ -521,13 +544,16 @@ hr {
   }
   .col-md-push-4 {
     left: 33.33333333%;
-  }
+  }*/
+
+  /*MOVED TO INLINE IN HEAD
   .col-md-push-3 {
     left: 25%;
   }
   .col-md-push-2 {
     left: 16.66666667%;
-  }
+  }*/
+  /* THIS CODE WASN"T USED
   .col-md-push-1 {
     left: 8.33333333%;
   }
@@ -572,8 +598,9 @@ hr {
   }
   .col-md-offset-0 {
     margin-left: 0%;
-  }
+  }*/
 }
+/* THIS WASN"T USED
 @media (min-width: 1200px) {
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
@@ -732,6 +759,7 @@ hr {
     margin-left: 0%;
   }
 }
+*/
 .clearfix:before,
 .clearfix:after,
 .container:before,

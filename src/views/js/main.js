@@ -1,3 +1,14 @@
+
+/* Code to capitalize first letter of a word.
+
+This was taken from 'Hutch Moore''s and 'Steve Harrison''s answer on stackoverflow:
+http://stackoverflow.com/questions/1026069/capitalize-the-first-letter-of-string-in-javascript
+
+*/
+String.prototype.capitalizeFirstLetter = function () {
+  return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 /*
 Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
 jank-free at 60 frames per second.
@@ -291,7 +302,7 @@ function generator(adj, noun) {
   var nouns = getNoun(noun);
   var randomAdjective = parseInt(Math.random() * adjectives.length);
   var randomNoun = parseInt(Math.random() * nouns.length);
-  var name = "The " + adjectives[randomAdjective] + " " + nouns[randomNoun];
+  var name = "The " + adjectives[randomAdjective].capitalizeFirstLetter() + " " + nouns[randomNoun].capitalizeFirstLetter();
   /*var name = "The " + adjectives[randomAdjective].capitalize() + " " + nouns[randomNoun].capitalize();*/
   return name;
 }
@@ -337,7 +348,7 @@ var ingredientItemizer = function(string) {
 var makeRandomPizza = function() {
   var pizza = "";
 
-  var numberOfMeats = Math.floor((Math.random() * 4));
+  var numberOfMeats = Math.floor((Math.random() * 3));
   var numberOfNonMeats = Math.floor((Math.random() * 3));
   var numberOfCheeses = Math.floor((Math.random() * 2));
 
@@ -374,9 +385,11 @@ var pizzaElementGenerator = function(i) {
   pizzaDescriptionContainer = document.createElement("div");
 
   pizzaContainer.classList.add("randomPizzaContainer");
-  pizzaContainer.style.width = "33.33%";
+  pizzaContainer.classList.add("col-md-4");
+  pizzaContainer.classList.add("col-xs-6");
+  /*pizzaContainer.style.width = "33.33%";*/
   pizzaContainer.style.height = "325px";
-  pizzaContainer.id = "pizza" + i;                // gives each pizza element a unique id
+  pizzaContainer.id = "pizza" + i; //gives each pizza element a unique id
   pizzaImageContainer.classList.add("col-md-6");
 
   pizzaImage.src = "images/pizza.png";
@@ -453,25 +466,37 @@ var resizePizzas = function(size) {
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
     var newWidth;
+    var newHeight = 325;
+    var w1 = 25,
+        w2 = 33.3,
+        w3 = 50;
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    if (screenWidth < 992) {
+      w1 = 33.3;
+      w2 = 50;
+      w3 = 100;
+    }
 
     switch(size) {
       case "1":
-        newWidth = 25;
+        newWidth = w1;
+        newHeight = 350;
         break;
       case "2":
-        newWidth = 33.3;
+        newWidth = w2;
         break;
       case "3":
-        newWidth = 50;
+        newWidth = w3;
         break;
       default:
         console.log("bug in changePizzaSizes Switch");
     }
-
     var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
 
     for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newWidth + "%";
+      randomPizzas[i].style.height = newHeight + "px";
     }
   }
 
@@ -489,7 +514,7 @@ window.performance.mark("mark_start_generating"); // collect timing data
 // This for-loop actually creates and appends all of the pizzas when the page loads
 var pizzasDiv = document.getElementById("randomPizzas");
 
-for (var i = 2; i < 100; i++) {
+for (var i = 2; i < 30; i++) {
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -503,6 +528,9 @@ console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "
 // Used by updatePositions() to decide when to log the average time per frame
 var frame = 0;
 
+
+/* REMOVED TESTING CODE ()
+
 // Logs the average amount of time per 10 frames needed to move the sliding background pizzas on scroll.
 function logAverageFrame(times) {   // times is the array of User Timing measurements from updatePositions()
   var numberOfEntries = times.length;
@@ -512,6 +540,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
   }
   console.log("Average time used by JS to generate last 10 frames: " + sum / 10 + "ms");
 }
+*/
 
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
@@ -539,14 +568,16 @@ function updatePositions() {
   }
 }
 
-// runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+function createPizzas () {
+  /* Cross browser supported code that will grab the windows Height & Width*/
+  var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-// Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function() {
-  var cols = 4;
-  var s = 256;
-  for (var i = 0; i < 4*cols; i++) {
+  var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+  var cols = Math.ceil(width/200),
+      rows = Math.ceil(height/230),
+      s = 256;
+  for (var i = 0; i < rows*cols; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza-sm.png";
@@ -557,4 +588,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
   updatePositions();
-});
+}
+
+// runs updatePositions on scroll
+window.addEventListener('scroll', updatePositions);
+
+// Generates the sliding pizzas when the page loads.
+createPizzas();
