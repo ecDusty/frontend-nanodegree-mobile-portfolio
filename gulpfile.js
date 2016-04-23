@@ -90,7 +90,8 @@ gulp.task('images', function () {
     .pipe(gulp.dest(DIST_DIR));
 });
 
-
+Final Version of Mobile Portfolio
+Gulp is up and running. Fully functioning with the gulp serve function.
 /*============
 =   Server   =
 =  Functions =
