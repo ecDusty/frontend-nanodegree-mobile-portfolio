@@ -23,9 +23,6 @@
 
 .port-item, .port-link, .port-link img, .port-item h3 {
   transition: transform 0.4s;
-  -o-transition: transform 0.4s;
-  -moz-transition: transform 0.4s;
-  -webkit-transition: transform 0.4s;
   color: #fff;
 }
 
@@ -60,19 +57,11 @@
   right: 0;
   padding: 5% 10%;
   transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .port-item:hover h3 {
   transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
 }
 
 .port-item:hover a {
@@ -88,9 +77,5 @@
 
   .port-item h3 {
     transform: translate(0, 102%);
-    -o-transform: translate(0, 102%);
-    -ms-transform: translate(0, 102%);
-    -moz-transform: translate(0, 102%);
-    -webkit-transform: translate(0, 102%);
   }
 }

@@ -1,0 +1,38 @@
+{
+  "name": "fend-mobile-portfolio",
+  "version": "1.5.0",
+  "description": "A Web developers mobile friendly portfolio. This is required to complete my 4th project in my FEND",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-live-server": "^0.0.29",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-jshint": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecDusty/frontend-nanodegree-mobile-portfolio.git"
+  },
+  "keywords": [
+    "mobile-portfolio",
+    "fend-p4"
+  ],
+  "author": "Erin Mulligan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecDusty/frontend-nanodegree-mobile-portfolio/issues"
+  },
+  "homepage": "https://github.com/ecDusty/frontend-nanodegree-mobile-portfolio#readme"
+}

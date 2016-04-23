@@ -7,7 +7,7 @@ http://stackoverflow.com/questions/1026069/capitalize-the-first-letter-of-string
 */
 String.prototype.capitalizeFirstLetter = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};
 
 /*
 Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
@@ -486,7 +486,10 @@ window.performance.mark("mark_start_generating"); // collect timing data
 // This for-loop actually creates and appends all of the pizzas when the page loads
 var pizzasDiv = document.getElementById("randomPizzas");
 
-for (var i = 2; i < 30; i++) {
+//Provides a variety of number of pizza's generated when the page loads
+var numPizzas = Math.floor(Math.random()*(90-30))+30;
+
+for (var i = 2; i < numPizzas; i++) {
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -565,8 +568,8 @@ function createPizzas () {
   updatePositions();
 }
 
-// runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
-
 // Generates the sliding pizzas when the page loads.
 createPizzas();
+
+// runs updatePositions on scroll
+window.addEventListener('scroll', updatePositions);
