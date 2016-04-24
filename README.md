@@ -12,7 +12,7 @@ Check out the site - _[Here]_
 
 If you'd like to follow suit, check out GitHubs' guide to [GitHub Pages]. This will give you a great place to test distribution ready code.
 
-GitHub Pages acts like a separate repository. Once your code is ready, you simiply push it to the repository, give it about a minute or 2 to load on their end, and boom you've got a hosted website.
+GitHub Pages acts like a separate repository. Once your code is ready, you simply push it to the repository, give it about a minute or 2 to load on their end, and boom you've got a hosted website.
 
 ## Folder Layout
 
