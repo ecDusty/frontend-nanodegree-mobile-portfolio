@@ -62,13 +62,14 @@
         background: -moz-linear-gradient(#FD5308, #FD5308, rgba(253, 83, 8, 0.3)); /* For Firefox 3.6 to 15 */
         background: linear-gradient(#FD5308, #FD5308, rgba(253, 83, 8, 0.3));
       }
+/*
 
-      /*================
+      ================
       =                =
       = WELCOME SCREEN =
       =  Slide in/out  =
       =                =
-      ================*/
+      ================
       #welcome, #wel-mes {
         position: fixed;
         width: 100%;
@@ -97,6 +98,7 @@
         -moz-transition: opacity 0.5s ease-in 1s;
         -o-transition: opacity 0.5s ease-in 1s;
       }
+*/
 
       /*================
       =                =
@@ -258,7 +260,8 @@
       }
 
       .intro {
-        margin: 8% 5%;
+/*        margin: 8% 5%;*/
+        padding: 8% 5%;
       }
 
       .intro p {
@@ -276,13 +279,17 @@
     ==                  ==
     ===================-->
     <header class="container">
+<!--
       <div id="welcome">
         <h1 id="wel-mes"><strong>WELCOME</strong></h1>
       </div>
+-->
       <div id="menu" class>
         <nav>
           <div id="main-Logo">
-            <img class="logo-img" src="images/ecDusty-logo.svg" alt="ecDusty Logo, Hong Kong Web Developer">
+            <a href='#title'>
+              <img class="logo-img" src="images/ecDusty-logo.svg" alt="ecDusty Logo, Hong Kong Web Developer">
+            </a>
           </div>
           <div id="navLinks">
             <ul>
@@ -294,7 +301,7 @@
           </div>
         </nav>
       </div>
-      <div class="banner-content">
+      <div id="title" class="banner-content">
         <h1 id="title">FRONT END WEB DEVELOPMENT</h1>
         <h3 class="spec-lang"><span>HTML</span>&bull;<span>CSS</span>&bull;<span>JavaScript</span></h3>
         <h3 class="v-port">VIEW PORTFOLIO</h3>
@@ -304,6 +311,7 @@
         </a>
       </div>
     </header>
+    <div id="me-click-height"></div>
     <div class="container">
       <div id="Me" class="intro">
         <img id="profPic" src="images/Pilot-profile-xs.jpg" alt="Erin's Profile Picture">
@@ -320,41 +328,46 @@
     ===================-->
       <div class="content">
         <ul id="portfolio">
-          <li style="background-color: #FD5308;" class="port-item">
+         <li class="port-item" style="background-color: #FD5308;">
+            <a class="port-link" href="views/pizza.html">
+            <img src="images/cat-click-app.jpg" alt="Cat Clicker App, Hong Kong Web Developer">
+            </a>
+            <h3>Cat Clicker App</h3>
+          </li>
+          <li class="port-item" style="background-color: #000;">
             <a class="port-link" href="views/pizza.html">
             <img src="views/images/pizza.svg" alt="Pizza Store Project, Hong Kong Web Developer">
             </a>
-            <h3>Dustys's Pizzeria</h3>
-          </li>
-          <li class="port-item" style="background-color: #000;">
-            <a class="port-link" href="pages/project-2048.html"><img src="images/build-your-own-2048.jpg" alt="2048 Game Page Test, Hong Kong Web Developer"></a>
-            <h3>Build Your Own 2048 (Sample Project)</h3>
+            <h3>Dusty's Pizzeria</h3>
           </li>
           <li class="port-item" style="background-color: darkblue;">
-            <a class="port-link" href="pages/project-webperf.html">
-              <img src="images/web-performance-class.jpg" alt="Web Performance Page test, Hong Kong Web Developer">
-            </a>
-            <h3>Web Performance Optimization (P4 Course)</h3>
-          </li>
-          <li class="port-item" style="background-color: #65BB51;">
             <a class="port-link" href="pages/game/game.html">
               <img src="images/arcade-game.jpg" alt="HTML 5 Canvas Game Project, Hong Kong Web Developer">
             </a>
             <h3>Frogger Arcade Game (Re-Imagined)</h3>
           </li>
-          <li class="port-item" style="background-color: white;">
-            <a class="port-link" href="pages/project-mobile.html">
-              <img src="images/mobile-devices.jpg" alt="Mobile Page Test, Hong Kong Web Developer">
-            </a>
-            <h3>Mobile Web Development</h3>
-          </li>
-          <li class="port-item" style="background-color: #FD5308;">
+          <li class="port-item" style="background-color: darkblue;">
             <a class="port-link" href="pages/resume/resume.html">
               <img src="images/first-resume.jpg" alt="Resume Portfolio Project, Hong Kong Web Developer">
             </a>
             <h3>Getting to know JavaScript Resume</h3>
           </li>
-
+          <li class="port-item" style="background-color: #fff;">
+            <a class="port-link" href="pages/project-2048.html"><img src="images/build-your-own-2048.jpg" alt="2048 Game Page Test, Hong Kong Web Developer"></a>
+            <h3>Build Your Own 2048 (Sample Page)</h3>
+          </li>
+          <li class="port-item" style="background-color: #000;">
+            <a class="port-link" href="pages/project-mobile.html">
+              <img src="images/mobile-devices.jpg" alt="Mobile Page Test, Hong Kong Web Developer">
+            </a>
+            <h3>Mobile Web Development (Sample Page)</h3>
+          </li>
+          <li class="port-item" style="background-color: #FD5308;">
+            <a class="port-link" href="pages/project-webperf.html">
+              <img src="images/web-performance-class.jpg" alt="Web Performance Page test, Hong Kong Web Developer">
+            </a>
+            <h3>Web Performance Optimization (Sample Page)</h3>
+          </li>
 
         </ul>
       </div>

@@ -4,6 +4,7 @@
   -box-sizing: border-box;
 }
 
+/*
 #welcome {
   top: -950px !important;
 }
@@ -11,6 +12,7 @@
 #welcome h1 {
   opacity: 0;
 }
+*/
 
 /*================
 =                =
@@ -58,6 +60,7 @@
   padding: 5% 10%;
   transform: translate(0, 0);
   background-color: rgba(0, 0, 0, 0.6);
+  line-height: 1em;
 }
 
 .port-item:hover h3 {
