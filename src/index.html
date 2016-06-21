@@ -385,7 +385,7 @@
       var navMenu = document.getElementById("menu");
       var scrollHeightCheck = function() {
         var y = window.scrollY;
-        var infoPos = document.getElementById("title").scrollHeight;
+        var infoPos = document.getElementById("title").scrollHeight - 200;
         if (y >= (infoPos)) {
           navMenu.className = "orangeBackground";
         } else {
