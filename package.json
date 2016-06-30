@@ -12,6 +12,7 @@
     "gulp-clean-css": "^2.0.6",
     "gulp-concat": "^2.6.0",
     "gulp-html-minifier": "^0.1.8",
+    "gulp-image": "^2.0.1",
     "gulp-jshint": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",

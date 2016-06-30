@@ -22,14 +22,16 @@ var imgS = require('gulp-image');
 var SCRIPTS_PATH = 'src/**/*.js';
 var HTML_PATH = 'src/**/*.html';
 var CSS_PATH = 'src/**/*.css';
-var IMG_PATH = 'src/**/images/*';
+var IMG_PATH = 'src/**/*.{jpeg,png,jpg,gif,svg}';
+var AUD_PATH = 'src/**/*.mp3';
 
 //Distribution
 var DIST_DIR = 'dist';
 var DIST_HTML = 'dist/**/*.html';
 var DIST_CSS = 'dist/**/*.css';
 var DIST_JS = 'dist/**/*.js';
-var DIST_IMG = 'dist/**/images/*';
+var DIST_IMG = 'dist/**/*.{jpeg,png,jpg,gif,svg}';
+var DIST_AUD = 'dist/**/*.mp3';
 
 /*============
 =            =
@@ -86,9 +88,33 @@ gulp.task('images', function () {
   console.log(strt + 'Images' + end);
 
   return gulp.src(IMG_PATH)
-    .pipe(imgS())
+    .pipe(imgS({
+        pngquant: true, //worked
+        optipng: true, //worked
+        zopflipng: false,
+        advpng: false,
+        jpegRecompress: false, //Didn't work on own
+        jpegoptim: true, //worked *Didn't work on own
+        mozjpeg: false,
+        gifsicle: false,
+        svgo: false //Didn't work on it's own
+      }))
     .pipe(gulp.dest(DIST_DIR));
 });
+
+/*============
+=            =
+=    AUDIO   =
+=            =
+=============*/
+gulp.task('sounds', function () {
+  console.log(strt + 'Audio Files' + end);
+
+  return gulp.src(AUD_PATH)
+    .pipe(gulp.dest(DIST_DIR));
+});
+
+
 
 /* Final Version of Mobile Portfolio
 Gulp is up and running. Fully functioning with the gulp serve function. */
@@ -129,4 +155,4 @@ gulp.task('serve', function() {
 =  Function  =
 =            =
 =============*/
-gulp.task('dist', ['images', 'scripts', 'html', 'styles']);
+gulp.task('dist', ['images', 'sounds', 'scripts', 'html', 'styles']);
